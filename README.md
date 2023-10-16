@@ -78,7 +78,7 @@ See the [run_cli.py](https://github.com/pharmapsychotic/clip-interrogator/blob/m
 from clip_interrogator import Config, Interrogator, LabelTable, load_list
 from PIL import Image
 
-ci = Interrogator(Config(blip_model_type=None))
+ci = Interrogator(Config(caption_model_name=None))
 image = Image.open(image_path).convert('RGB')
 table = LabelTable(load_list('terms.txt'), 'terms', ci)
 best_match = table.rank(ci.image_to_features(image), top_count=1)[0]
